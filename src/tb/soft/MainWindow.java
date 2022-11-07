@@ -1,11 +1,17 @@
 package tb.soft;
 
+import javax.swing.*;
+
 /**
  * klasa główna zawierająca metodę statyczną main
  */
 public class MainWindow {
     public static void main(String[] args) {
-        System.out.println("Program konsolowy");
-        System.exit(0);
+        try {
+            LoginApp loginApp = new LoginApp();
+            SwingUtilities.invokeLater(loginApp);
+        } catch (Exception e) {
+            System.err.println("Unhandled exception in main(): " + e.getMessage());
+        }
     }
 }
