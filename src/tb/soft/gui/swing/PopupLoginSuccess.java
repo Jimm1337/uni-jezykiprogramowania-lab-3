@@ -1,9 +1,9 @@
 package tb.soft.gui.swing;
 
-import java.awt.*;
+import javax.swing.*;
 
 class PopupLoginSuccess extends PopupBase {
-    public PopupLoginSuccess(Frame owner) {
+    public PopupLoginSuccess(JFrame owner) {
         super(owner, true);
     }
     @Override

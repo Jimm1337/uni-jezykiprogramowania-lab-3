@@ -1,9 +1,9 @@
 package tb.soft.gui.swing;
 
-import java.awt.*;
+import javax.swing.*;
 
 class PopupRegisterSuccess extends PopupBase {
-    public PopupRegisterSuccess(Frame owner) {
+    public PopupRegisterSuccess(JFrame owner) {
         super(owner, true);
     }
 

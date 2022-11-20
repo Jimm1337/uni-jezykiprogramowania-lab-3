@@ -1,4 +1,9 @@
 package tb.soft.gui.swing;
 
-class WindowUX extends WindowBase{
+import tb.soft.gui.IGui;
+
+class WindowUX extends WindowBase {
+    public WindowUX(IGui manager) {
+        super(manager, "Użytkownicy");
+    }
 }

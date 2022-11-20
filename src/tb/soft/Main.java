@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * klasa główna zawierająca metodę statyczną main
  */
-public class MainWindow {
+public class Main {
     public static void main(String[] args) {
         try {
             LoginApp loginApp = new LoginApp();
