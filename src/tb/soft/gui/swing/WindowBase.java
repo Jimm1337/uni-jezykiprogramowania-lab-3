@@ -1,4 +1,6 @@
 package tb.soft.gui.swing;
 
-abstract class WindowBase {
+import java.awt.*;
+
+abstract class WindowBase extends Frame {
 }
