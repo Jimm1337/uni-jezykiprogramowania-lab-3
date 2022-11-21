@@ -8,8 +8,7 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         try {
-            LoginApp loginApp = new LoginApp();
-            SwingUtilities.invokeLater(loginApp);
+            SwingUtilities.invokeLater(() -> new LoginApp().run());
         } catch (Exception e) {
             System.err.println("Unhandled exception in main(): " + e.getMessage());
         }
