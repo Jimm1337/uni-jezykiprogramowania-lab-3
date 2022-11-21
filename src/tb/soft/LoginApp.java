@@ -1,42 +1,47 @@
 package tb.soft;
 
+import tb.soft.db.UsersDb;
 import tb.soft.gui.IGui;
 import tb.soft.gui.swing.GuiManager;
 
 public class LoginApp implements Runnable, IApp {
-    private final IGui GUI = new GuiManager(this);
+    private static final String DB_FILE = "db.txt";
+    private final IGui gui;
+    private final UsersDb db;
+    private String currentUser;
+
+    public LoginApp() {
+        db = new UsersDb(DB_FILE);
+        gui = new GuiManager(this);
+    }
 
     @Override
     public void run() {
-        GUI.entry();
+        gui.entry();
     }
 
     @Override
     public boolean handleLogin(String login, char[] password) {
-        //todo
+        if (db.checkCredentials(login, password)) {
+            currentUser = login;
+            return true;
+        }
         return false;
     }
 
     @Override
     public boolean handleRegister(String login, char[] password) {
-        //todo
-        return false;
+        return db.addUser(login, password);
     }
 
     @Override
-    public String getUsers() {
-        //todo
-        return null;
+    public void handleRemove() {
+        db.removeUser(currentUser);
+        currentUser = null;
     }
 
     @Override
-    public String readDatabase(String filename) {
-        //todo
-        return null;
-    }
-
-    @Override
-    public void writeDatabase(String filename) {
-        //todo
+    public Object[][] readDatabase() {
+        return db.toTable();
     }
 }

@@ -1,13 +1,17 @@
 package tb.soft.gui.swing;
 
 import javax.swing.*;
+import java.awt.*;
 
 class PopupLoginSuccess extends PopupBase {
+    private static final Dimension MIN_SIZE = new Dimension(230, 125);
+
     public PopupLoginSuccess(JFrame owner) {
-        super(owner, true);
+        super(owner, "Zalogowano pomyślnie!", true);
     }
+
     @Override
-    protected String getPopupText() {
-        return "Zalogowano pomyślnie!";
+    protected void setSize() {
+        setMinimumSize(MIN_SIZE);
     }
 }

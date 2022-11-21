@@ -1,21 +1,21 @@
 package tb.soft.gui.swing;
 
 import javax.swing.*;
+import java.awt.*;
 
 class PopupLoginFailure extends PopupBase {
-    private final String message;
+    private static final Dimension MIN_SIZE = new Dimension(250, 125);
+
     public PopupLoginFailure(JFrame owner) {
-        super(owner, false);
-        this.message = "Niepoprawny login lub hasło!";
+        super(owner, "Niepoprawny login lub hasło!", false);
     }
 
     public PopupLoginFailure(JFrame owner, String message) {
-        super(owner, false);
-        this.message = message;
+        super(owner, message, false);
     }
 
     @Override
-    protected String getPopupText() {
-        return message;
+    protected void setSize() {
+        setMinimumSize(MIN_SIZE);
     }
 }

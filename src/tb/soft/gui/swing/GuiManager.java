@@ -13,7 +13,7 @@ public class GuiManager extends Container implements IGui {
     public GuiManager(IApp app) {
         this.app = app;
 
-        window = new WindowLogin(this);
+        flow(new WindowLogin(this));
     }
     @Override
     public void entry() {
@@ -27,7 +27,7 @@ public class GuiManager extends Container implements IGui {
 
     @Override
     public void flow(IWindow window) {
-        WindowBase wnd = (WindowBase) window;
+        WindowBase wnd = (WindowBase)window;
 
         if (this.window != null) {
             this.window.setVisible(false);

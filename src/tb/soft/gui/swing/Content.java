@@ -23,6 +23,8 @@ public class Content extends JPanel {
         constraints.fill = GridBagConstraints.BOTH;
         constraints.anchor = GridBagConstraints.CENTER;
         constraints.insets = GAPS;
+
+        setBackground(Color.WHITE);
     }
 
     public void addComponent(Component component, int gridx, int gridy, int gridwidth, int gridheight) {
@@ -31,7 +33,43 @@ public class Content extends JPanel {
         constraints.gridwidth = gridwidth;
         constraints.gridheight = gridheight;
 
-        add(component, constraints);
+        super.add(component, constraints);
         owner.pack();
+    }
+
+    @Deprecated
+    @Override
+    public Component add(Component component) {
+        throw new UnsupportedOperationException("Use addComponent() instead");
+    }
+
+    @Deprecated
+    @Override
+    public Component add(Component component, int index) {
+        throw new UnsupportedOperationException("Use addComponent() instead");
+    }
+
+    @Deprecated
+    @Override
+    public void add(Component component, Object constraints) {
+        throw new UnsupportedOperationException("Use addComponent() instead");
+    }
+
+    @Deprecated
+    @Override
+    public void add(Component component, Object constraints, int index) {
+        throw new UnsupportedOperationException("Use addComponent() instead");
+    }
+
+    @Deprecated
+    @Override
+    public Component add(String name, Component component) {
+        throw new UnsupportedOperationException("Use addComponent() instead");
+    }
+
+    @Deprecated
+    @Override
+    public void add(PopupMenu popup) {
+        throw new UnsupportedOperationException("Use addComponent() instead");
     }
 }

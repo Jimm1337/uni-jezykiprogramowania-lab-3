@@ -1,21 +1,17 @@
 package tb.soft.gui.swing;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class PopupRegisterFailure extends PopupBase {
-    private final String message;
-    public PopupRegisterFailure(JFrame owner) {
-        super(owner, false);
-        this.message = "Nie udało się zarejestrować!";
-    }
+    private static final Dimension MIN_SIZE = new Dimension(300, 125);
 
     public PopupRegisterFailure(JFrame owner, String message) {
-        super(owner, false);
-        this.message = message;
+        super(owner, message, false);
     }
 
     @Override
-    protected String getPopupText() {
-        return message;
+    protected void setSize() {
+        setMinimumSize(MIN_SIZE);
     }
 }
